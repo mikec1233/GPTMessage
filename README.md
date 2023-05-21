@@ -1,3 +1,3 @@
 # GPTMessage
 
-Project to practice python, and API connections
+Project to practice python and API connections
