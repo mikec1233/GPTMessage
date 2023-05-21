@@ -6,11 +6,14 @@ load_dotenv()
 
 # Read more at http://twil.io/secure
 account_sid = os.getenv('TWILIO_ACCOUNT_SID')
-auth_token = os.getenv("TWILIO_AUTH_TOKEN")
+auth_token = os.getenv('TWILIO_AUTH_TOKEN')
 client = Client(account_sid, auth_token)
-message = client.messages.create(
-  body="Hello from Twilio",
-  from_="+18667069264",
-  to="+13367697741"
-)
-print(message.sid)
+
+def send_sms(message_body, from_number = os.getenv('TWILIO_NUM'), to_number = os.getenv('PERSONAL_NUM')):
+    message = client.messages.create(
+        body=message_body,
+        from_=from_number,
+        to=to_number
+    )
+    print(message.sid)
+    return message.sid
