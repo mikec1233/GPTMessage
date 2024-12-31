@@ -24,3 +24,5 @@ if __name__ == "__main__":
     app.run(port = 5001, debug=True)
 
 #5/21 working local with ngrok, next step is hosting on AWS
+
+#test
